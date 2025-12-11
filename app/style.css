@@ -1,0 +1,56 @@
+/* app/assets/style.css */
+
+/* Main Background */
+.stApp {
+    background-color: #0E1117;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #161B22;
+    border-right: 1px solid #30363D;
+}
+
+/* Metric Cards (The KPIs) */
+div[data-testid="stMetric"] {
+    background-color: #1E232B;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FF4B4B; /* Red Accent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Make labels pop */
+div[data-testid="stMetricLabel"] {
+    color: #8B949E;
+    font-size: 0.9rem;
+}
+
+/* Make values glow */
+div[data-testid="stMetricValue"] {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* Custom Headers */
+h1, h2, h3 {
+    color: #E6EDF3 !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background-color: #161B22;
+    border-radius: 4px;
+    color: #8B949E;
+    padding: 10px 20px;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #FF4B4B !important;
+    color: white !important;
+}
