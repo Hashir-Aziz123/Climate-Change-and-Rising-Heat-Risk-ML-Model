@@ -1,56 +1,78 @@
 /* app/assets/style.css */
 
-/* Main Background */
+/* --- 1. TYPOGRAPHY & RESET --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Roboto Mono', monospace; /* The Terminal Font */
+    background-color: #000000; /* Pitch Black */
+    color: #E0E0E0;
+}
+
+/* --- 2. LAYOUT & CONTAINERS --- */
 .stApp {
-    background-color: #0E1117;
-    font-family: 'Inter', sans-serif;
+    background-color: #000000;
 }
 
-/* Sidebar */
+/* Sidebar "Control Panel" */
 [data-testid="stSidebar"] {
-    background-color: #161B22;
-    border-right: 1px solid #30363D;
+    background-color: #050505;
+    border-right: 1px solid #333333;
 }
 
-/* Metric Cards (The KPIs) */
+/* Sharp Corners for Everything */
+div, button, input, select {
+    border-radius: 0px !important; 
+}
+
+/* --- 3. METRIC CARDS (The "HUD" Look) --- */
 div[data-testid="stMetric"] {
-    background-color: #1E232B;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #FF4B4B; /* Red Accent */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background-color: #000000;
+    border: 1px solid #333333;
+    padding: 10px;
+    border-left: 5px solid #FF4B4B; /* Status Indicator */
 }
 
-/* Make labels pop */
 div[data-testid="stMetricLabel"] {
-    color: #8B949E;
-    font-size: 0.9rem;
+    color: #888888;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
 }
 
-/* Make values glow */
 div[data-testid="stMetricValue"] {
     color: #FFFFFF;
     font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2); /* Slight CRT Glow */
 }
 
-/* Custom Headers */
-h1, h2, h3 {
-    color: #E6EDF3 !important;
-}
-
-/* Tabs */
+/* --- 4. TABS & NAVIGATION --- */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 10px;
+    gap: 0px;
+    border-bottom: 1px solid #333;
 }
 
 .stTabs [data-baseweb="tab"] {
-    background-color: #161B22;
-    border-radius: 4px;
-    color: #8B949E;
-    padding: 10px 20px;
+    background-color: #000000;
+    border: 1px solid #333;
+    border-bottom: none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .stTabs [aria-selected="true"] {
-    background-color: #FF4B4B !important;
-    color: white !important;
+    background-color: #111 !important;
+    color: #00FF41 !important; /* Terminal Green */
+    border-top: 2px solid #00FF41;
+}
+
+/* --- 5. INFO BOXES --- */
+/* Transform Blue Info boxes into "System Logs" */
+.stAlert {
+    background-color: #000000;
+    border: 1px solid #00FF41;
+    color: #00FF41;
+    font-family: 'Roboto Mono', monospace;
 }

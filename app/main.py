@@ -1,13 +1,11 @@
-# app/main.py
 import streamlit as st
 from utils.data_loader import load_model
-# Import views (We will write these next)
 from views import dashboard, live_monitor, history
 
 # --- CONFIG ---
 st.set_page_config(
     page_title="Pakistan Heat Risk Command Center",
-    page_icon="🌡️",
+    page_icon="🔥", # Favicon can stay, it's tiny
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -19,23 +17,24 @@ def local_css(file_name):
 
 local_css("app/style.css")
 
-# --- SIDEBAR NAVIGATION ---
-st.sidebar.title("🔥 Command Center")
-st.sidebar.markdown("Theme 2: Climate Resilience")
+# --- SIDEBAR NAVIGATION (TERMINAL STYLE) ---
+st.sidebar.markdown("### SELECT_MODULE")
+st.sidebar.markdown("---")
 
-# Navigation Menu
+# CLI Style Navigation
+# No Emojis. Just Brackets and Slashes.
 page = st.sidebar.radio(
-    "Mission Control", 
-    ["🕹️ Simulation Lab", "📡 Live Monitor", "🎬 History Lab"]
+    "SELECT_MODULE", 
+    ["SIMULATION_ZONE", "LIVE_UPLINK", "HISTORICAL_PRESENTATION"],
 )
 
 st.sidebar.markdown("---")
-st.sidebar.info("v2.0 | Powered by Random Forest / XGBoost")
+st.sidebar.code("v2.1.0 | STABLE_BUILD")
 
 # --- ROUTING ---
-if page == "🕹️ Simulation Lab":
+if page == "SIMULATION_ZONE":
     dashboard.show()
-elif page == "📡 Live Monitor":
+elif page == "LIVE_UPLINK":
     live_monitor.show()
-elif page == "🎬 History Lab":
+elif page == "HISTORICAL_PRESENTATION":
     history.show()
