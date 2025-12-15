@@ -8,7 +8,7 @@ def show():
     # TERMINAL HEADER
     st.markdown("""
     <div style='border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;'>
-        <h2 style='margin:0; color: white; font-family: Roboto Mono;'>// FORENSIC_LOGS <span style='font-size: 14px; color: #FF00FF;'>[ARCHIVE_MOUNTED]</span></h2>
+        <h2 style='margin:0; color: white; font-family: Roboto Mono;'>Historical Presentation <span style='font-size: 14px; color: #FF00FF;'>[ARCHIVE_MOUNTED]</span></h2>
     </div>
     """, unsafe_allow_html=True)
     
